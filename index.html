@@ -440,10 +440,17 @@
                     </div>
                 </div>
                 <div class="inquiry-form-wrapper">
-                    <form class="quick-form" id="inquiryForm">
-                        <input type="text" placeholder="Your Name" required class="form-input">
-                        <input type="tel" placeholder="Phone Number" required class="form-input">
-                        <select class="form-input" required>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="quick-form" id="inquiryForm">
+                        <input type="hidden" name="access_key" value="b9d84958-e8a4-4de0-8901-ea2183787b92">
+                        <input type="hidden" name="subject" value="New Callback Request from VBuilt">
+                        <input type="hidden" name="from_name" value="VBuilt Notifications">
+                        
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                        <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9\-\+\s]{10,15}" title="Please enter a valid phone number (e.g. +91 9876543210)" class="form-input">
+                        <select name="service" class="form-input" required>
                             <option value="" disabled selected>Select Service Required</option>
                             <option value="electrician">Electrician</option>
                             <option value="plumber">Plumber</option>
@@ -456,7 +463,8 @@
                             <option value="engineer">Engineer</option>
                             <option value="other">Other Services</option>
                         </select>
-                        <button type="submit" class="btn btn-primary btn-full glow-btn">Request Callback</button>
+                        <button type="submit" class="btn btn-primary btn-full glow-btn" id="submitBtn">Request Callback</button>
+                        <p id="formResult" style="display: none; text-align: center; font-weight: 500; font-size: 0.95rem; margin-top: 0.5rem; transition: all 0.3s ease;"></p>
                     </form>
                 </div>
             </div>
