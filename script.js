@@ -388,4 +388,85 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Language Switcher Logic
+    const langOptions = document.querySelectorAll('.lang-option');
+    
+    // Auto-detect browser language initially or load from localStorage
+    let currentLang = localStorage.getItem('vbuilt_lang');
+    if (!currentLang) {
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.toLowerCase().includes('hi')) {
+            currentLang = 'hi';
+        } else {
+            currentLang = 'en';
+        }
+    }
+    
+    function setLanguage(lang) {
+        if (!window.translations || !window.translations[lang]) return;
+        
+        currentLang = lang;
+        localStorage.setItem('vbuilt_lang', lang);
+        
+        // Update active class on switchers
+        langOptions.forEach(opt => {
+            if (opt.getAttribute('data-lang') === lang) {
+                opt.classList.add('active');
+            } else {
+                opt.classList.remove('active');
+            }
+        });
+        
+        // Apply translations
+        const dict = window.translations[lang];
+        
+        // Translate elements
+        const translatableElements = document.querySelectorAll('[data-translate]');
+        translatableElements.forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (dict[key]) {
+                if(dict[key].includes('<')) {
+                    el.innerHTML = dict[key];
+                } else {
+                    el.textContent = dict[key];
+                }
+            }
+        });
+        
+        // Translate placeholders
+        const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+        placeholderElements.forEach(el => {
+            const key = el.getAttribute('data-translate-placeholder');
+            if (dict[key]) {
+                el.placeholder = dict[key];
+            }
+        });
+        
+        // Smooth transition effect
+        document.body.style.transition = 'opacity 0.2s ease';
+        document.body.style.opacity = '0.8';
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+        }, 150);
+    }
+    
+    // Bind click events
+    langOptions.forEach(opt => {
+        opt.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const lang = opt.getAttribute('data-lang');
+            if (lang !== currentLang) {
+                setLanguage(lang);
+            }
+        });
+    });
+    
+    // Initialize Language
+    // Small delay to ensure all DOM elements are parsed if needed, though we are in DOMContentLoaded
+    setTimeout(() => {
+        setLanguage(currentLang);
+    }, 50);
+
 });

@@ -1,0 +1,106 @@
+import os
+
+with open('index.html', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+replacements = [
+    ('<a href="#services" class="nav-link">Services</a>', '<a href="#services" class="nav-link" data-translate="nav_services">Services</a>'),
+    ('<a href="#how-it-works" class="nav-link">How it Works</a>', '<a href="#how-it-works" class="nav-link" data-translate="nav_how_it_works">How it Works</a>'),
+    ('<a href="#social" class="nav-link">Our Journey</a>', '<a href="#social" class="nav-link" data-translate="nav_journey">Our Journey</a>'),
+    ('<a href="#about" class="nav-link">About</a>', '<a href="#about" class="nav-link" data-translate="nav_about">About</a>'),
+    ('<a href="#testimonials" class="nav-link">Reviews</a>', '<a href="#testimonials" class="nav-link" data-translate="nav_reviews">Reviews</a>'),
+    ('<a href="#services" class="mobile-link">Services</a>', '<a href="#services" class="mobile-link" data-translate="nav_services">Services</a>'),
+    ('<a href="#how-it-works" class="mobile-link">How it Works</a>', '<a href="#how-it-works" class="mobile-link" data-translate="nav_how_it_works">How it Works</a>'),
+    ('<a href="#social" class="mobile-link">Our Journey</a>', '<a href="#social" class="mobile-link" data-translate="nav_journey">Our Journey</a>'),
+    ('<a href="#about" class="mobile-link">About Us</a>', '<a href="#about" class="mobile-link" data-translate="nav_about_us">About Us</a>'),
+    ('<a href="#testimonials" class="mobile-link">Reviews</a>', '<a href="#testimonials" class="mobile-link" data-translate="nav_reviews">Reviews</a>'),
+    ('<a href="#" class="mobile-link text-accent open-worker-modal">Join as Worker</a>', '<a href="#" class="mobile-link text-accent open-worker-modal" data-translate="nav_join_worker">Join as Worker</a>'),
+    ('<div class="badge badge-glass">We Build & Secure 🏗️🔒</div>', '<div class="badge badge-glass" data-translate="hero_badge">We Build & Secure 🏗️🔒</div>'),
+    ('<h1>Trusted Construction & Home Services in One Place</h1>', '<h1 data-translate="hero_title">Trusted Construction & Home Services in One Place</h1>'),
+    ('<p>Electricians, Plumbers, Carpenters, Painters, Tile Workers & CCTV Experts — Verified Professionals\n                    Near You.</p>', '<p data-translate="hero_desc">Electricians, Plumbers, Carpenters, Painters, Tile Workers & CCTV Experts — Verified Professionals\n                    Near You.</p>'),
+    ('Book a Service', '<span data-translate="hero_book_btn">Book a Service</span>'),
+    ('Join as Worker', '<span data-translate="nav_join_worker">Join as Worker</span>'),
+    ('<span>Verified Workers</span>', '<span data-translate="hero_stat_workers">Verified Workers</span>'),
+    ('<span>Happy Customers</span>', '<span data-translate="hero_stat_customers">Happy Customers</span>'),
+    ('<span>Dedicated Support</span>', '<span data-translate="hero_stat_support">Dedicated Support</span>'),
+    ('<h2>Premium Services</h2>', '<h2 data-translate="services_title">Premium Services</h2>'),
+    ('<p>Expert solutions for every construction and home maintenance need.</p>', '<p data-translate="services_desc">Expert solutions for every construction and home maintenance need.</p>'),
+    ('<h3>Electrician</h3>', '<h3 data-translate="service_electrician">Electrician</h3>'),
+    ('<p>Wiring, lighting, switchboards, and fault repairs.</p>', '<p data-translate="service_elec_desc">Wiring, lighting, switchboards, and fault repairs.</p>'),
+    ('<h3>Plumber</h3>', '<h3 data-translate="service_plumber">Plumber</h3>'),
+    ('<p>Pipe installations, leak fixes, bathroom fittings.</p>', '<p data-translate="service_plumb_desc">Pipe installations, leak fixes, bathroom fittings.</p>'),
+    ('<h3>Carpenter</h3>', '<h3 data-translate="service_carpenter">Carpenter</h3>'),
+    ('<p>Custom furniture, door fittings, wood repairs.</p>', '<p data-translate="service_carp_desc">Custom furniture, door fittings, wood repairs.</p>'),
+    ('<h3>Mason</h3>', '<h3 data-translate="service_mason">Mason</h3>'),
+    ('<p>Brickwork, plastering, concrete pouring, and structural repairs.</p>', '<p data-translate="service_mason_desc">Brickwork, plastering, concrete pouring, and structural repairs.</p>'),
+    ('<h3>Tile Worker</h3>', '<h3 data-translate="service_tile">Tile Worker</h3>'),
+    ('<p>Floor and wall tiling, grouting, marble, and granite.</p>', '<p data-translate="service_tile_desc">Floor and wall tiling, grouting, marble, and granite.</p>'),
+    ('<h3>Painter</h3>', '<h3 data-translate="service_painter">Painter</h3>'),
+    ('<p>Interior/exterior painting, waterproofing, finishes.</p>', '<p data-translate="service_paint_desc">Interior/exterior painting, waterproofing, finishes.</p>'),
+    ('<h3>CCTV Installation</h3>', '<h3 data-translate="service_cctv">CCTV Installation</h3>'),
+    ('<p>Smart security cameras, DVR setup, and surveillance.</p>', '<p data-translate="service_cctv_desc">Smart security cameras, DVR setup, and surveillance.</p>'),
+    ('<h3>Architect</h3>', '<h3 data-translate="service_architect">Architect</h3>'),
+    ('<p>Floor plans, 3D elevations, and complete building design.</p>', '<p data-translate="service_arch_desc">Floor plans, 3D elevations, and complete building design.</p>'),
+    ('<h3>Engineer</h3>', '<h3 data-translate="service_engineer">Engineer</h3>'),
+    ('<p>Site supervision, structural analysis, and project management.</p>', '<p data-translate="service_eng_desc">Site supervision, structural analysis, and project management.</p>'),
+    ('Book Now\n                        &rarr;', '<span data-translate="service_book_btn">Book Now &rarr;</span>'),
+    ('Book Now &rarr;', '<span data-translate="service_book_btn">Book Now &rarr;</span>'),
+    ('>View All Services</a>', ' data-translate="services_view_all">View All Services</a>'),
+    ('<h2>How It Works</h2>', '<h2 data-translate="how_title">How It Works</h2>'),
+    ('<p>Getting your work done is simpler than ever.</p>', '<p data-translate="how_desc">Getting your work done is simpler than ever.</p>'),
+    ('<h3>Select Service</h3>', '<h3 data-translate="how_step1_title">Select Service</h3>'),
+    ('<p>Choose the service you need from our extensive list of professionals.</p>', '<p data-translate="how_step1_desc">Choose the service you need from our extensive list of professionals.</p>'),
+    ('<h3>Book Trusted Worker</h3>', '<h3 data-translate="how_step2_title">Book Trusted Worker</h3>'),
+    ('<p>Confirm your booking and a verified professional will be assigned instantly.</p>', '<p data-translate="how_step2_desc">Confirm your booking and a verified professional will be assigned instantly.</p>'),
+    ('<h3>Get Work Done</h3>', '<h3 data-translate="how_step3_title">Get Work Done</h3>'),
+    ('<p>Relax while our expert completes the job safely and securely.</p>', '<p data-translate="how_step3_desc">Relax while our expert completes the job safely and securely.</p>'),
+    ('Follow our Instagram', '<span data-translate="journey_follow">Follow our Instagram</span>'),
+    ('<h2 class="font-gradient">Trusted by 50,0+ Customers</h2>', '<h2 class="font-gradient" data-translate="reviews_title">Trusted by 50,0+ Customers</h2>'),
+    ('<p>Real stories from homeowners and businesses who rely on VBuilt.</p>', '<p data-translate="reviews_desc">Real stories from homeowners and businesses who rely on VBuilt.</p>'),
+    ('<span class="badge badge-primary mb-3">Our Story</span>', '<span class="badge badge-primary mb-3" data-translate="about_badge">Our Story</span>'),
+    ('<h2>Why VBuilt Exists</h2>', '<h2 data-translate="about_title">Why VBuilt Exists</h2>'),
+    ('<p class="lead-text" style="max-width: 800px; margin: 0 auto;">We noticed a massive gap in India\'s home\n                    services market: finding reliable, verified, and transparent skilled professionals was exhausting.\n                </p>', '<p class="lead-text" style="max-width: 800px; margin: 0 auto;" data-translate="about_lead">We noticed a massive gap in India\'s home\n                    services market: finding reliable, verified, and transparent skilled professionals was exhausting.\n                </p>'),
+    ('<h3 class="mb-3">Building Trust from Zero 🚀</h3>', '<h3 class="mb-3" data-translate="about_h3">Building Trust from Zero 🚀</h3>'),
+    ('<p>VBuilt was born from a simple idea: <strong>"We Build & Secure"</strong>. We realized that\n                        whether it\'s fixing a leaking pipe, wiring a new home, or installing complex CCTV systems,\n                        customers needed someone they could trust with their homes and businesses.</p>', '<p data-translate="about_p1">VBuilt was born from a simple idea: <strong>"We Build & Secure"</strong>. We realized that\n                        whether it\'s fixing a leaking pipe, wiring a new home, or installing complex CCTV systems,\n                        customers needed someone they could trust with their homes and businesses.</p>'),
+    ('<p>We are a tech-driven marketplace on a mission to organize the unorganized sector of construction\n                        and maintenance. By bringing together the finest tradespeople—electricians, plumbers, masons,\n                        and architects—we provide a seamless, transparent, and high-quality service experience.</p>', '<p data-translate="about_p2">We are a tech-driven marketplace on a mission to organize the unorganized sector of construction\n                        and maintenance. By bringing together the finest tradespeople—electricians, plumbers, masons,\n                        and architects—we provide a seamless, transparent, and high-quality service experience.</p>'),
+    ('<h4>Our Vision</h4>', '<h4 data-translate="about_vision_title">Our Vision</h4>'),
+    ('<p>To be the most trusted and reliable partner for every construction and home maintenance\n                                need in India.</p>', '<p data-translate="about_vision_desc">To be the most trusted and reliable partner for every construction and home maintenance\n                                need in India.</p>'),
+    ('<h4>Our Mission</h4>', '<h4 data-translate="about_mission_title">Our Mission</h4>'),
+    ('<p>Empowering skilled workers with fair opportunities while delivering exceptional,\n                                frictionless service to customers.</p>', '<p data-translate="about_mission_desc">Empowering skilled workers with fair opportunities while delivering exceptional,\n                                frictionless service to customers.</p>'),
+    ('<span class="badge badge-primary">For Professionals</span>', '<span class="badge badge-primary" data-translate="worker_badge">For Professionals</span>'),
+    ('<h2>Why Workers Join VBuilt</h2>', '<h2 data-translate="worker_title">Why Workers Join VBuilt</h2>'),
+    ('<p class="lead-text">We empower skilled tradespeople by providing a platform for consistent growth,\n                        respect, and financial stability.</p>', '<p class="lead-text" data-translate="worker_lead">We empower skilled tradespeople by providing a platform for consistent growth,\n                        respect, and financial stability.</p>'),
+    ('Register as a Partner', '<span data-translate="worker_reg_btn">Register as a Partner</span>'),
+    ('<h2>Ready to get started?</h2>', '<h2 data-translate="inquiry_title">Ready to get started?</h2>'),
+    ('<p>Drop your details and our team will call you back within 15 minutes.</p>', '<p data-translate="inquiry_desc">Drop your details and our team will call you back within 15 minutes.</p>'),
+    ('>Request\n                            Callback</button>', ' data-translate="inquiry_btn">Request Callback</button>'),
+    ('<h3>Company</h3>', '<h3 data-translate="footer_company">Company</h3>'),
+    ('<h3>Services</h3>', '<h3 data-translate="footer_services">Services</h3>'),
+    ('<h3>Get in Touch</h3>', '<h3 data-translate="footer_contact">Get in Touch</h3>'),
+    ('<p>&copy; 2026 VBuilt. All Rights Reserved. Designed for the Future.</p>', '<p data-translate="footer_rights">&copy; 2026 VBuilt. All Rights Reserved. Designed for the Future.</p>'),
+    ('placeholder="Your Name"', 'placeholder="Your Name" data-translate-placeholder="form_name"'),
+    ('placeholder="Phone Number"', 'placeholder="Phone Number" data-translate-placeholder="form_phone"'),
+    ('<option value="" disabled selected>Select Service Required</option>', '<option value="" disabled selected data-translate="form_service">Select Service Required</option>'),
+    ('<option value="" disabled selected>Select Skill/Profession</option>', '<option value="" disabled selected data-translate="form_skill">Select Skill/Profession</option>'),
+    ('placeholder="Area / Location"', 'placeholder="Area / Location" data-translate-placeholder="form_loc"'),
+    ('placeholder="Years of Experience"', 'placeholder="Years of Experience" data-translate-placeholder="form_exp"'),
+    ('placeholder="Describe your requirement (optional)"', 'placeholder="Describe your requirement (optional)" data-translate-placeholder="form_desc"'),
+    ('<h3>Join as <span class="text-accent">Worker</span></h3>', '<h3 data-translate="modal_worker_title">Join as <span class="text-accent">Worker</span></h3>'),
+    ('<p>Register to become a verified VBuilt partner and get consistent bookings.</p>', '<p data-translate="modal_worker_desc">Register to become a verified VBuilt partner and get consistent bookings.</p>'),
+    ('>Submit\n                        Registration</button>', ' data-translate="modal_worker_btn">Submit Registration</button>'),
+    ('<h3>Book <span id="modalServiceName" class="text-accent">Service</span></h3>', '<h3 data-translate="modal_service_title">Book <span id="modalServiceName" class="text-accent">Service</span></h3>'),
+    ('<p>Fill out the form below and we\'ll connect you with a verified professional.</p>', '<p data-translate="modal_service_desc">Fill out the form below and we\'ll connect you with a verified professional.</p>'),
+    ('>Confirm\n                        Booking</button>', ' data-translate="modal_service_btn">Confirm Booking</button>')
+]
+
+for t, r in replacements:
+    content = content.replace(t, r)
+    # Also handle Windows newlines just in case
+    t_win = t.replace('\n', '\r\n')
+    r_win = r.replace('\n', '\r\n')
+    content = content.replace(t_win, r_win)
+
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Replacements done using Python.")

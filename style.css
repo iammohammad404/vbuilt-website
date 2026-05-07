@@ -412,6 +412,75 @@ ul {
 }
 
 /* ==========================================================================
+   Language Switcher
+   ========================================================================== */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(15, 82, 186, 0.15);
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--clr-text-main);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.lang-switcher:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(15, 82, 186, 0.3);
+}
+
+.lang-switcher .material-icons-round {
+    font-size: 1.1rem;
+    color: var(--clr-primary);
+}
+
+.lang-option {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.lang-option:hover {
+    color: var(--clr-primary);
+}
+
+.lang-option.active {
+    color: var(--clr-primary);
+    font-weight: 800;
+}
+
+.lang-divider {
+    color: rgba(0,0,0,0.1);
+    user-select: none;
+}
+
+.mobile-lang-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 82, 186, 0.05);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(15, 82, 186, 0.1);
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--clr-text-main);
+    margin-top: 0.5rem;
+}
+
+.mobile-lang-switcher .material-icons-round {
+    font-size: 1.25rem;
+    color: var(--clr-primary);
+}
+
+/* ==========================================================================
    Hero Section
    ========================================================================== */
 .hero {
@@ -441,9 +510,7 @@ ul {
 }
 
 .cinematic-blend {
-    background: linear-gradient(135deg, rgba(11, 23, 39, 0.95) 0%, rgba(15, 82, 186, 0.6) 50%, rgba(255, 183, 3, 0.15) 100%);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: linear-gradient(135deg, rgba(11, 23, 39, 0.8) 0%, rgba(15, 82, 186, 0.35) 60%, rgba(255, 183, 3, 0.1) 100%);
 }
 
 .moving-gradient-light {

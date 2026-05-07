@@ -39,16 +39,24 @@
             </a>
 
             <div class="nav-menu" id="nav-menu">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#how-it-works" class="nav-link">How it Works</a>
-                <a href="#social" class="nav-link">Our Journey</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#services" class="nav-link" data-translate="nav_services">Services</a>
+                <a href="#how-it-works" class="nav-link" data-translate="nav_how_it_works">How it Works</a>
+                <a href="#social" class="nav-link" data-translate="nav_journey">Our Journey</a>
+                <a href="#about" class="nav-link" data-translate="nav_about">About</a>
+                <a href="#testimonials" class="nav-link" data-translate="nav_reviews">Reviews</a>
             </div>
 
             <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="langSwitcher">
+                    <span class="material-icons-round">language</span>
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-option" data-lang="hi">हिन्दी</span>
+                </div>
+                
                 <a href="https://wa.me/919730113674" target="_blank" class="btn btn-primary btn-sm-nav">
-                    <span class="material-icons-round">chat</span> WhatsApp Us
+                    <span class="material-icons-round">chat</span> <span data-translate="nav_whatsapp">WhatsApp Us</span>
                 </a>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
                     <span class="material-icons-round">menu</span>
@@ -66,14 +74,23 @@
             </button>
         </div>
         <div class="mobile-nav-links">
-            <a href="#services" class="mobile-link">Services</a>
-            <a href="#how-it-works" class="mobile-link">How it Works</a>
-            <a href="#social" class="mobile-link">Our Journey</a>
-            <a href="#about" class="mobile-link">About Us</a>
-            <a href="#testimonials" class="mobile-link">Reviews</a>
-            <a href="#" class="mobile-link text-accent open-worker-modal">Join as Worker</a>
+            <a href="#services" class="mobile-link" data-translate="nav_services">Services</a>
+            <a href="#how-it-works" class="mobile-link" data-translate="nav_how_it_works">How it Works</a>
+            <a href="#social" class="mobile-link" data-translate="nav_journey">Our Journey</a>
+            <a href="#about" class="mobile-link" data-translate="nav_about_us">About Us</a>
+            <a href="#testimonials" class="mobile-link" data-translate="nav_reviews">Reviews</a>
+            <a href="#" class="mobile-link text-accent open-worker-modal" data-translate="nav_join_worker"><span data-translate="nav_join_worker"><span data-translate="nav_join_worker">Join as Worker</span></span></a>
+            
+            <!-- Mobile Language Switcher -->
+            <div class="mobile-lang-switcher" id="mobileLangSwitcher">
+                <span class="material-icons-round">language</span>
+                <span class="lang-option active" data-lang="en">EN</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-option" data-lang="hi">हिन्दी</span>
+            </div>
+
             <a href="https://wa.me/919730113674" target="_blank" class="btn btn-primary btn-full mt-4">
-                <span class="material-icons-round">chat</span> WhatsApp Us
+                <span class="material-icons-round">chat</span> <span data-translate="nav_whatsapp">WhatsApp Us</span>
             </a>
         </div>
     </div>
@@ -96,17 +113,17 @@
 
         <div class="container hero-content fade-in-up" style="position: relative; z-index: 10;">
             <div class="hero-text">
-                <div class="badge badge-glass">We Build & Secure 🏗️🔒</div>
-                <h1>Trusted Construction & Home Services in One Place</h1>
-                <p>Electricians, Plumbers, Carpenters, Painters, Tile Workers & CCTV Experts — Verified Professionals
+                <div class="badge badge-glass" data-translate="hero_badge">We Build & Secure 🏗️🔒</div>
+                <h1 data-translate="hero_title">Trusted Construction & Home Services in One Place</h1>
+                <p data-translate="hero_desc">Electricians, Plumbers, Carpenters, Painters, Tile Workers & CCTV Experts — Verified Professionals
                     Near You.</p>
 
                 <div class="hero-buttons">
                     <a href="#quick-inquiry" class="btn btn-accent btn-large glow-btn">
-                        Book a Service
+                        <span data-translate="hero_book_btn"><span data-translate="hero_book_btn">Book a Service</span></span>
                     </a>
                     <a href="#" class="btn btn-glass btn-large open-worker-modal">
-                        <span class="material-icons-round">person_add</span> Join as Worker
+                        <span class="material-icons-round">person_add</span> <span data-translate="nav_join_worker"><span data-translate="nav_join_worker">Join as Worker</span></span>
                     </a>
                 </div>
 
@@ -116,21 +133,21 @@
                         <div class="stat-icon"><span class="material-icons-round">verified_user</span></div>
                         <div class="stat-info">
                             <strong>100+</strong>
-                            <span>Verified Workers</span>
+                            <span data-translate="hero_stat_workers">Verified Workers</span>
                         </div>
                     </div>
                     <div class="hero-stat-card">
                         <div class="stat-icon"><span class="material-icons-round">sentiment_satisfied_alt</span></div>
                         <div class="stat-info">
                             <strong>500+</strong>
-                            <span>Happy Customers</span>
+                            <span data-translate="hero_stat_customers">Happy Customers</span>
                         </div>
                     </div>
                     <div class="hero-stat-card">
                         <div class="stat-icon"><span class="material-icons-round">support_agent</span></div>
                         <div class="stat-info">
                             <strong>24/7</strong>
-                            <span>Dedicated Support</span>
+                            <span data-translate="hero_stat_support">Dedicated Support</span>
                         </div>
                     </div>
                 </div>
@@ -142,73 +159,70 @@
     <section id="services" class="section bg-light">
         <div class="container">
             <div class="section-header text-center reveal">
-                <h2>Premium Services</h2>
-                <p>Expert solutions for every construction and home maintenance need.</p>
+                <h2 data-translate="services_title">Premium Services</h2>
+                <p data-translate="services_desc">Expert solutions for every construction and home maintenance need.</p>
             </div>
 
             <div class="services-grid reveal">
                 <!-- Service Cards -->
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">electrical_services</span></div>
-                    <h3>Electrician</h3>
-                    <p>Wiring, lighting, switchboards, and fault repairs.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Electrician">Book Now
-                        &rarr;</a>
+                    <h3 data-translate="service_electrician">Electrician</h3>
+                    <p data-translate="service_elec_desc">Wiring, lighting, switchboards, and fault repairs.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Electrician"><span data-translate="service_book_btn"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">plumbing</span></div>
-                    <h3>Plumber</h3>
-                    <p>Pipe installations, leak fixes, bathroom fittings.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Plumber">Book Now &rarr;</a>
+                    <h3 data-translate="service_plumber">Plumber</h3>
+                    <p data-translate="service_plumb_desc">Pipe installations, leak fixes, bathroom fittings.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Plumber"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">carpenter</span></div>
-                    <h3>Carpenter</h3>
-                    <p>Custom furniture, door fittings, wood repairs.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Carpenter">Book Now &rarr;</a>
+                    <h3 data-translate="service_carpenter">Carpenter</h3>
+                    <p data-translate="service_carp_desc">Custom furniture, door fittings, wood repairs.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Carpenter"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">architecture</span></div>
-                    <h3>Mason</h3>
-                    <p>Brickwork, plastering, concrete pouring, and structural repairs.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Mason">Book Now &rarr;</a>
+                    <h3 data-translate="service_mason">Mason</h3>
+                    <p data-translate="service_mason_desc">Brickwork, plastering, concrete pouring, and structural repairs.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Mason"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">grid_view</span></div>
-                    <h3>Tile Worker</h3>
-                    <p>Floor and wall tiling, grouting, marble, and granite.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Tile Worker">Book Now
-                        &rarr;</a>
+                    <h3 data-translate="service_tile">Tile Worker</h3>
+                    <p data-translate="service_tile_desc">Floor and wall tiling, grouting, marble, and granite.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Tile Worker"><span data-translate="service_book_btn"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">format_paint</span></div>
-                    <h3>Painter</h3>
-                    <p>Interior/exterior painting, waterproofing, finishes.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Painter">Book Now &rarr;</a>
+                    <h3 data-translate="service_painter">Painter</h3>
+                    <p data-translate="service_paint_desc">Interior/exterior painting, waterproofing, finishes.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Painter"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">videocam</span></div>
-                    <h3>CCTV Installation</h3>
-                    <p>Smart security cameras, DVR setup, and surveillance.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="CCTV Installation">Book Now
-                        &rarr;</a>
+                    <h3 data-translate="service_cctv">CCTV Installation</h3>
+                    <p data-translate="service_cctv_desc">Smart security cameras, DVR setup, and surveillance.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="CCTV Installation"><span data-translate="service_book_btn"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">engineering</span></div>
-                    <h3>Architect</h3>
-                    <p>Floor plans, 3D elevations, and complete building design.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Architect">Book Now &rarr;</a>
+                    <h3 data-translate="service_architect">Architect</h3>
+                    <p data-translate="service_arch_desc">Floor plans, 3D elevations, and complete building design.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Architect"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">handyman</span></div>
-                    <h3>Engineer</h3>
-                    <p>Site supervision, structural analysis, and project management.</p>
-                    <a href="#" class="service-book-btn open-service-modal" data-service="Engineer">Book Now &rarr;</a>
+                    <h3 data-translate="service_engineer">Engineer</h3>
+                    <p data-translate="service_eng_desc">Site supervision, structural analysis, and project management.</p>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Engineer"><span data-translate="service_book_btn"><span data-translate="service_book_btn">Book Now &rarr;</span></span></a>
                 </div>
             </div>
 
             <div class="text-center mt-5 reveal">
-                <a href="#quick-inquiry" class="btn btn-primary btn-large">View All Services</a>
+                <a href="#quick-inquiry" class="btn btn-primary btn-large" data-translate="services_view_all" data-translate="services_view_all">View All Services</a>
             </div>
         </div>
     </section>
@@ -217,30 +231,30 @@
     <section id="how-it-works" class="section">
         <div class="container">
             <div class="section-header text-center reveal">
-                <h2>How It Works</h2>
-                <p>Getting your work done is simpler than ever.</p>
+                <h2 data-translate="how_title">How It Works</h2>
+                <p data-translate="how_desc">Getting your work done is simpler than ever.</p>
             </div>
 
             <div class="steps-container reveal">
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <div class="step-icon"><span class="material-icons-round">touch_app</span></div>
-                    <h3>Select Service</h3>
-                    <p>Choose the service you need from our extensive list of professionals.</p>
+                    <h3 data-translate="how_step1_title">Select Service</h3>
+                    <p data-translate="how_step1_desc">Choose the service you need from our extensive list of professionals.</p>
                 </div>
                 <div class="step-line"></div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <div class="step-icon"><span class="material-icons-round">event_available</span></div>
-                    <h3>Book Trusted Worker</h3>
-                    <p>Confirm your booking and a verified professional will be assigned instantly.</p>
+                    <h3 data-translate="how_step2_title">Book Trusted Worker</h3>
+                    <p data-translate="how_step2_desc">Confirm your booking and a verified professional will be assigned instantly.</p>
                 </div>
                 <div class="step-line"></div>
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <div class="step-icon"><span class="material-icons-round">task_alt</span></div>
-                    <h3>Get Work Done</h3>
-                    <p>Relax while our expert completes the job safely and securely.</p>
+                    <h3 data-translate="how_step3_title">Get Work Done</h3>
+                    <p data-translate="how_step3_desc">Relax while our expert completes the job safely and securely.</p>
                 </div>
             </div>
         </div>
@@ -383,7 +397,7 @@
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    Follow our Instagram
+                    <span data-translate="journey_follow"><span data-translate="journey_follow">Follow our Instagram</span></span>
                 </a>
             </div>
         </div>
@@ -393,8 +407,8 @@
     <section id="testimonials" class="section bg-light">
         <div class="container">
             <div class="section-header text-center reveal">
-                <h2 class="font-gradient">Trusted by 50,0+ Customers</h2>
-                <p>Real stories from homeowners and businesses who rely on VBuilt.</p>
+                <h2 class="font-gradient" data-translate="reviews_title">Trusted by 50,0+ Customers</h2>
+                <p data-translate="reviews_desc">Real stories from homeowners and businesses who rely on VBuilt.</p>
             </div>
 
             <div class="testimonials-grid reveal">
@@ -477,20 +491,20 @@
     <section id="about" class="section">
         <div class="container">
             <div class="section-header text-center reveal">
-                <span class="badge badge-primary mb-3">Our Story</span>
-                <h2>Why VBuilt Exists</h2>
-                <p class="lead-text" style="max-width: 800px; margin: 0 auto;">We noticed a massive gap in India's home
+                <span class="badge badge-primary mb-3" data-translate="about_badge">Our Story</span>
+                <h2 data-translate="about_title">Why VBuilt Exists</h2>
+                <p class="lead-text" style="max-width: 800px; margin: 0 auto;" data-translate="about_lead">We noticed a massive gap in India's home
                     services market: finding reliable, verified, and transparent skilled professionals was exhausting.
                 </p>
             </div>
 
             <div class="about-grid mt-5 reveal">
                 <div class="about-content">
-                    <h3 class="mb-3">Building Trust from Zero 🚀</h3>
-                    <p>VBuilt was born from a simple idea: <strong>"We Build & Secure"</strong>. We realized that
+                    <h3 class="mb-3" data-translate="about_h3">Building Trust from Zero 🚀</h3>
+                    <p data-translate="about_p1">VBuilt was born from a simple idea: <strong>"We Build & Secure"</strong>. We realized that
                         whether it's fixing a leaking pipe, wiring a new home, or installing complex CCTV systems,
                         customers needed someone they could trust with their homes and businesses.</p>
-                    <p>We are a tech-driven marketplace on a mission to organize the unorganized sector of construction
+                    <p data-translate="about_p2">We are a tech-driven marketplace on a mission to organize the unorganized sector of construction
                         and maintenance. By bringing together the finest tradespeople—electricians, plumbers, masons,
                         and architects—we provide a seamless, transparent, and high-quality service experience.</p>
 
@@ -498,15 +512,15 @@
                         <div class="mv-card">
                             <span class="material-icons-round text-accent mb-2"
                                 style="font-size: 2rem;">visibility</span>
-                            <h4>Our Vision</h4>
-                            <p>To be the most trusted and reliable partner for every construction and home maintenance
+                            <h4 data-translate="about_vision_title">Our Vision</h4>
+                            <p data-translate="about_vision_desc">To be the most trusted and reliable partner for every construction and home maintenance
                                 need in India.</p>
                         </div>
                         <div class="mv-card">
                             <span class="material-icons-round text-primary mb-2"
                                 style="font-size: 2rem;">rocket_launch</span>
-                            <h4>Our Mission</h4>
-                            <p>Empowering skilled workers with fair opportunities while delivering exceptional,
+                            <h4 data-translate="about_mission_title">Our Mission</h4>
+                            <p data-translate="about_mission_desc">Empowering skilled workers with fair opportunities while delivering exceptional,
                                 frictionless service to customers.</p>
                         </div>
                     </div>
@@ -539,8 +553,8 @@
 
             <div class="text-center mt-5 reveal"
                 style="padding-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#quick-inquiry" class="btn btn-primary btn-large glow-btn">Book a Service</a>
-                <a href="#" class="btn btn-outline-primary btn-large open-worker-modal">Join as Worker</a>
+                <a href="#quick-inquiry" class="btn btn-primary btn-large glow-btn"><span data-translate="hero_book_btn"><span data-translate="hero_book_btn">Book a Service</span></span></a>
+                <a href="#" class="btn btn-outline-primary btn-large open-worker-modal"><span data-translate="nav_join_worker"><span data-translate="nav_join_worker">Join as Worker</span></span></a>
             </div>
         </div>
     </section>
@@ -561,9 +575,9 @@
                     </div>
                 </div>
                 <div class="worker-split-content">
-                    <span class="badge badge-primary">For Professionals</span>
-                    <h2>Why Workers Join VBuilt</h2>
-                    <p class="lead-text">We empower skilled tradespeople by providing a platform for consistent growth,
+                    <span class="badge badge-primary" data-translate="worker_badge">For Professionals</span>
+                    <h2 data-translate="worker_title">Why Workers Join VBuilt</h2>
+                    <p class="lead-text" data-translate="worker_lead">We empower skilled tradespeople by providing a platform for consistent growth,
                         respect, and financial stability.</p>
 
                     <ul class="premium-list mt-4">
@@ -600,7 +614,7 @@
                     </ul>
 
                     <a href="#" class="btn btn-primary btn-large mt-4 open-worker-modal">
-                        <span class="material-icons-round">how_to_reg</span> Register as a Partner
+                        <span class="material-icons-round">how_to_reg</span> <span data-translate="worker_reg_btn"><span data-translate="worker_reg_btn">Register as a Partner</span></span>
                     </a>
                 </div>
             </div>
@@ -612,8 +626,8 @@
         <div class="container reveal">
             <div class="inquiry-box shadow-hover">
                 <div class="inquiry-content">
-                    <h2>Ready to get started?</h2>
-                    <p>Drop your details and our team will call you back within 15 minutes.</p>
+                    <h2 data-translate="inquiry_title">Ready to get started?</h2>
+                    <p data-translate="inquiry_desc">Drop your details and our team will call you back within 15 minutes.</p>
                     <div class="contact-badges">
                         <span class="badge"><span class="material-icons-round"
                                 style="font-size:14px;vertical-align:middle;">speed</span> Fast Response</span>
@@ -630,11 +644,11 @@
                         <!-- Honeypot Spam Protection -->
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                        <input type="text" name="name" placeholder="Your Name" required class="form-input">
-                        <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9\-\+\s]{10,15}"
+                        <input type="text" name="name" placeholder="Your Name" data-translate-placeholder="form_name" data-translate-placeholder="form_name" required class="form-input">
+                        <input type="tel" name="phone" placeholder="Phone Number" data-translate-placeholder="form_phone" data-translate-placeholder="form_phone" required pattern="[0-9\-\+\s]{10,15}"
                             title="Please enter a valid phone number (e.g. +91 9876543210)" class="form-input">
                         <select name="service" class="form-input" required>
-                            <option value="" disabled selected>Select Service Required</option>
+                            <option value="" disabled selected data-translate="form_service">Select Service Required</option>
                             <option value="electrician">Electrician</option>
                             <option value="plumber">Plumber</option>
                             <option value="carpenter">Carpenter</option>
@@ -646,8 +660,7 @@
                             <option value="engineer">Engineer</option>
                             <option value="other">Other Services</option>
                         </select>
-                        <button type="submit" class="btn btn-primary btn-full glow-btn" id="submitBtn">Request
-                            Callback</button>
+                        <button type="submit" class="btn btn-primary btn-full glow-btn" id="submitBtn" data-translate="inquiry_btn">Request Callback</button>
                         <p id="formResult"
                             style="display: none; text-align: center; font-weight: 500; font-size: 0.95rem; margin-top: 0.5rem; transition: all 0.3s ease;">
                         </p>
@@ -679,7 +692,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h3>Company</h3>
+                    <h3 data-translate="footer_company">Company</h3>
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#social">Our Journey</a></li>
@@ -689,7 +702,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h3>Services</h3>
+                    <h3 data-translate="footer_services">Services</h3>
                     <ul>
                         <li><a href="https://wa.me/919730113674?text=I%20need%20an%20Electrician"
                                 target="_blank">Electrician</a></li>
@@ -703,7 +716,7 @@
                 </div>
 
                 <div class="footer-contact">
-                    <h3>Get in Touch</h3>
+                    <h3 data-translate="footer_contact">Get in Touch</h3>
                     <ul class="contact-info">
                         <li><span class="material-icons-round text-accent">location_on</span> Khamgaon
                         </li>
@@ -718,7 +731,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 VBuilt. All Rights Reserved. Designed for the Future.</p>
+                <p data-translate="footer_rights">&copy; 2026 VBuilt. All Rights Reserved. Designed for the Future.</p>
                 <div class="footer-legal">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
@@ -736,6 +749,7 @@
         </svg>
     </a>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 
     <!-- Worker Registration Modal -->
@@ -745,8 +759,8 @@
                 <span class="material-icons-round">close</span>
             </button>
             <div class="modal-header">
-                <h3>Join as <span class="text-accent">Worker</span></h3>
-                <p>Register to become a verified VBuilt partner and get consistent bookings.</p>
+                <h3 data-translate="modal_worker_title">Join as <span class="text-accent">Worker</span></h3>
+                <p data-translate="modal_worker_desc">Register to become a verified VBuilt partner and get consistent bookings.</p>
             </div>
             <div class="modal-body">
                 <form action="https://api.web3forms.com/submit" method="POST" class="quick-form" id="workerForm">
@@ -758,10 +772,10 @@
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     <input type="text" name="name" placeholder="Full Name" required class="form-input">
-                    <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9\-\+\s]{10,15}"
+                    <input type="tel" name="phone" placeholder="Phone Number" data-translate-placeholder="form_phone" data-translate-placeholder="form_phone" required pattern="[0-9\-\+\s]{10,15}"
                         title="Please enter a valid phone number" class="form-input">
                     <select name="skill" class="form-input" required>
-                        <option value="" disabled selected>Select Skill/Profession</option>
+                        <option value="" disabled selected data-translate="form_skill">Select Skill/Profession</option>
                         <option value="Electrician">Electrician</option>
                         <option value="Plumber">Plumber</option>
                         <option value="Carpenter">Carpenter</option>
@@ -772,12 +786,11 @@
                         <option value="Architect">Architect</option>
                         <option value="Engineer">Engineer</option>
                     </select>
-                    <input type="text" name="location" placeholder="Area / Location" required class="form-input">
-                    <input type="number" name="experience" placeholder="Years of Experience" min="0" max="60" required
+                    <input type="text" name="location" placeholder="Area / Location" data-translate-placeholder="form_loc" data-translate-placeholder="form_loc" required class="form-input">
+                    <input type="number" name="experience" placeholder="Years of Experience" data-translate-placeholder="form_exp" data-translate-placeholder="form_exp" min="0" max="60" required
                         class="form-input">
 
-                    <button type="submit" class="btn btn-primary btn-full glow-btn" id="workerSubmitBtn">Submit
-                        Registration</button>
+                    <button type="submit" class="btn btn-primary btn-full glow-btn" id="workerSubmitBtn" data-translate="modal_worker_btn">Submit Registration</button>
                     <p id="workerFormResult"
                         style="display: none; text-align: center; font-weight: 500; font-size: 0.95rem; margin-top: 0.5rem; transition: all 0.3s ease;">
                     </p>
@@ -793,8 +806,8 @@
                 <span class="material-icons-round">close</span>
             </button>
             <div class="modal-header">
-                <h3>Book <span id="modalServiceName" class="text-accent">Service</span></h3>
-                <p>Fill out the form below and we'll connect you with a verified professional.</p>
+                <h3 data-translate="modal_service_title">Book <span id="modalServiceName" class="text-accent">Service</span></h3>
+                <p data-translate="modal_service_desc">Fill out the form below and we'll connect you with a verified professional.</p>
             </div>
             <div class="modal-body">
                 <form action="https://api.web3forms.com/submit" method="POST" class="quick-form" id="modalForm">
@@ -807,14 +820,13 @@
 
                     <input type="text" name="service" id="modalServiceInput" class="form-input" readonly
                         style="background: rgba(0,0,0,0.03); color: var(--text-color); font-weight: 600; cursor: not-allowed; border-color: rgba(0,0,0,0.05);">
-                    <input type="text" name="name" placeholder="Your Name" required class="form-input">
-                    <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9\-\+\s]{10,15}"
+                    <input type="text" name="name" placeholder="Your Name" data-translate-placeholder="form_name" data-translate-placeholder="form_name" required class="form-input">
+                    <input type="tel" name="phone" placeholder="Phone Number" data-translate-placeholder="form_phone" data-translate-placeholder="form_phone" required pattern="[0-9\-\+\s]{10,15}"
                         title="Please enter a valid phone number" class="form-input">
-                    <textarea name="description" placeholder="Describe your requirement (optional)" rows="3"
+                    <textarea name="description" placeholder="Describe your requirement (optional)" data-translate-placeholder="form_desc" data-translate-placeholder="form_desc" rows="3"
                         class="form-input" style="resize: vertical;"></textarea>
 
-                    <button type="submit" class="btn btn-primary btn-full glow-btn" id="modalSubmitBtn">Confirm
-                        Booking</button>
+                    <button type="submit" class="btn btn-primary btn-full glow-btn" id="modalSubmitBtn" data-translate="modal_service_btn">Confirm Booking</button>
                     <p id="modalFormResult"
                         style="display: none; text-align: center; font-weight: 500; font-size: 0.95rem; margin-top: 0.5rem; transition: all 0.3s ease;">
                     </p>
