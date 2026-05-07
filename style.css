@@ -995,6 +995,102 @@ ul {
 }
 
 /* ==========================================================================
+   About Us Section
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.about-content p {
+    color: var(--clr-text-main);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.mv-card {
+    background-color: var(--clr-bg-light);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--clr-accent);
+    transition: transform var(--transition-fast);
+}
+
+.mv-card:hover {
+    transform: translateY(-3px);
+}
+
+.mv-card:last-child {
+    border-left-color: var(--clr-primary);
+}
+
+.mv-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.mv-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    color: var(--clr-text-muted);
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.highlight-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+}
+
+.highlight-card .list-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.highlight-card h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.highlight-card p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--clr-text-muted);
+}
+
+.btn-outline-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-normal);
+}
+
+.btn-outline-primary:hover {
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+}
+
+/* ==========================================================================
    Animations & Reveals
    ========================================================================== */
 .fade-in-up {
@@ -1048,6 +1144,8 @@ ul {
     .inquiry-box { flex-direction: row; align-items: center; }
     .inquiry-content, .inquiry-form-wrapper { flex: 1; }
     
+    .mission-vision { grid-template-columns: 1fr 1fr; }
+    
     .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-bottom { flex-direction: row; justify-content: space-between; }
@@ -1061,6 +1159,7 @@ ul {
     .hero-text h1 { font-size: 4.5rem; letter-spacing: -0.04em; }
     
     .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-grid { grid-template-columns: 1.2fr 1fr; align-items: center; }
     .reels-grid { grid-template-columns: repeat(4, 1fr); }
     
     .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; }

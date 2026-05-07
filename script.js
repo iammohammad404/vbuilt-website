@@ -273,4 +273,119 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Worker Registration Modal Logic
+    const workerModal = document.getElementById('workerModal');
+    const closeWorkerModalBtn = document.getElementById('closeWorkerModalBtn');
+    const openWorkerModalBtns = document.querySelectorAll('.open-worker-modal');
+
+    function openWorkerModal() {
+        if (workerModal) {
+            workerModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // If opened from mobile menu, close mobile menu first
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+    }
+
+    function closeWorkerModal() {
+        if (workerModal) {
+            workerModal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            setTimeout(() => {
+                const form = document.getElementById('workerForm');
+                if(form) form.reset();
+                const result = document.getElementById('workerFormResult');
+                if(result) result.style.display = 'none';
+                const btn = document.getElementById('workerSubmitBtn');
+                if(btn) {
+                    btn.innerHTML = 'Submit Registration';
+                    btn.classList.remove('bg-success');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }
+            }, 300);
+        }
+    }
+
+    openWorkerModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWorkerModal();
+        });
+    });
+
+    if (closeWorkerModalBtn) closeWorkerModalBtn.addEventListener('click', closeWorkerModal);
+    
+    if (workerModal) {
+        workerModal.addEventListener('click', (e) => {
+            if (e.target === workerModal) {
+                closeWorkerModal();
+            }
+        });
+    }
+
+    // Worker Form Submission (Web3Forms)
+    const workerForm = document.getElementById('workerForm');
+    const workerFormResult = document.getElementById('workerFormResult');
+    
+    if (workerForm) {
+        workerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('workerSubmitBtn');
+            const originalText = 'Submit Registration';
+            
+            btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;animation:spin 1s linear infinite;">autorenew</span> Processing...';
+            btn.style.opacity = '0.8';
+            workerFormResult.style.display = "none";
+            
+            const formData = new FormData(workerForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResponse = await response.json();
+                if (response.status == 200) {
+                    btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;">check_circle</span> Registered Successfully';
+                    btn.classList.add('bg-success');
+                    btn.style.backgroundColor = '#10b981';
+                    btn.style.color = 'white';
+                    
+                    workerFormResult.style.display = "block";
+                    workerFormResult.innerHTML = "✅ Registration Submitted Successfully. Our team will contact you shortly.";
+                    workerFormResult.style.color = "#10b981";
+                    
+                    setTimeout(() => {
+                        closeWorkerModal();
+                    }, 3500);
+                } else {
+                    workerFormResult.style.display = "block";
+                    workerFormResult.innerHTML = jsonResponse.message || "Something went wrong. Please try again.";
+                    workerFormResult.style.color = "#ef4444";
+                    btn.innerHTML = originalText;
+                    btn.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                workerFormResult.style.display = "block";
+                workerFormResult.innerHTML = "Something went wrong! Please check your connection.";
+                workerFormResult.style.color = "#ef4444";
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+            });
+        });
+    }
 });
