@@ -157,4 +157,120 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Modal Logic
+    const serviceModal = document.getElementById('serviceModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalServiceName = document.getElementById('modalServiceName');
+    const modalServiceInput = document.getElementById('modalServiceInput');
+    const openModalBtns = document.querySelectorAll('.open-service-modal');
+
+    function openModal(service) {
+        if (serviceModal) {
+            modalServiceName.textContent = service;
+            modalServiceInput.value = service;
+            serviceModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // prevent background scrolling
+        }
+    }
+
+    function closeModal() {
+        if (serviceModal) {
+            serviceModal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset form inside modal slightly after closing animation
+            setTimeout(() => {
+                const form = document.getElementById('modalForm');
+                if(form) form.reset();
+                const result = document.getElementById('modalFormResult');
+                if(result) result.style.display = 'none';
+                const btn = document.getElementById('modalSubmitBtn');
+                if(btn) {
+                    btn.innerHTML = 'Confirm Booking';
+                    btn.classList.remove('bg-success');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }
+            }, 300);
+        }
+    }
+
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const service = btn.getAttribute('data-service');
+            openModal(service);
+        });
+    });
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    
+    // Close modal on outside click
+    if (serviceModal) {
+        serviceModal.addEventListener('click', (e) => {
+            if (e.target === serviceModal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Modal Form Submission (Web3Forms)
+    const modalForm = document.getElementById('modalForm');
+    const modalFormResult = document.getElementById('modalFormResult');
+    
+    if (modalForm) {
+        modalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('modalSubmitBtn');
+            const originalText = 'Confirm Booking';
+            
+            btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;animation:spin 1s linear infinite;">autorenew</span> Processing...';
+            btn.style.opacity = '0.8';
+            modalFormResult.style.display = "none";
+            
+            const formData = new FormData(modalForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResponse = await response.json();
+                if (response.status == 200) {
+                    btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;">check_circle</span> Request Submitted Successfully';
+                    btn.classList.add('bg-success');
+                    btn.style.backgroundColor = '#10b981';
+                    btn.style.color = 'white';
+                    
+                    modalFormResult.style.display = "block";
+                    modalFormResult.innerHTML = "✅ Request Submitted Successfully. Our team will contact you within 15 minutes.";
+                    modalFormResult.style.color = "#10b981";
+                    
+                    setTimeout(() => {
+                        closeModal();
+                    }, 3000);
+                } else {
+                    modalFormResult.style.display = "block";
+                    modalFormResult.innerHTML = jsonResponse.message || "Something went wrong. Please try again.";
+                    modalFormResult.style.color = "#ef4444";
+                    btn.innerHTML = originalText;
+                    btn.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                modalFormResult.style.display = "block";
+                modalFormResult.innerHTML = "Something went wrong! Please check your connection.";
+                modalFormResult.style.color = "#ef4444";
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+            });
+        });
+    }
 });

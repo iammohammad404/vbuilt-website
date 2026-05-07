@@ -138,64 +138,55 @@
                     <div class="service-icon"><span class="material-icons-round">electrical_services</span></div>
                     <h3>Electrician</h3>
                     <p>Wiring, lighting, switchboards, and fault repairs.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20an%20Electrician" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Electrician">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">plumbing</span></div>
                     <h3>Plumber</h3>
                     <p>Pipe installations, leak fixes, bathroom fittings.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Plumber" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Plumber">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">carpenter</span></div>
                     <h3>Carpenter</h3>
                     <p>Custom furniture, door fittings, wood repairs.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Carpenter" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Carpenter">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">architecture</span></div>
                     <h3>Mason</h3>
                     <p>Brickwork, plastering, concrete pouring, and structural repairs.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Mason" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Mason">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">grid_view</span></div>
                     <h3>Tile Worker</h3>
                     <p>Floor and wall tiling, grouting, marble, and granite.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Tile%20Worker" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Tile Worker">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">format_paint</span></div>
                     <h3>Painter</h3>
                     <p>Interior/exterior painting, waterproofing, finishes.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Painter" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Painter">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">videocam</span></div>
                     <h3>CCTV Installation</h3>
                     <p>Smart security cameras, DVR setup, and surveillance.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20CCTV%20Installation" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="CCTV Installation">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">engineering</span></div>
                     <h3>Architect</h3>
                     <p>Floor plans, 3D elevations, and complete building design.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20an%20Architect" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Architect">Book Now &rarr;</a>
                 </div>
                 <div class="service-card group">
                     <div class="service-icon"><span class="material-icons-round">handyman</span></div>
                     <h3>Engineer</h3>
                     <p>Site supervision, structural analysis, and project management.</p>
-                    <a href="https://wa.me/919730113674?text=I%20need%20an%20Engineer" target="_blank"
-                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                    <a href="#" class="service-book-btn open-service-modal" data-service="Engineer">Book Now &rarr;</a>
                 </div>
             </div>
 
@@ -551,6 +542,37 @@
     </a>
 
     <script src="script.js"></script>
+
+    <!-- Service Booking Modal -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModalBtn" aria-label="Close modal">
+                <span class="material-icons-round">close</span>
+            </button>
+            <div class="modal-header">
+                <h3>Book <span id="modalServiceName" class="text-accent">Service</span></h3>
+                <p>Fill out the form below and we'll connect you with a verified professional.</p>
+            </div>
+            <div class="modal-body">
+                <form action="https://api.web3forms.com/submit" method="POST" class="quick-form" id="modalForm">
+                    <input type="hidden" name="access_key" value="b9d84958-e8a4-4de0-8901-ea2183787b92">
+                    <input type="hidden" name="subject" value="New Service Booking from VBuilt Modal">
+                    <input type="hidden" name="from_name" value="VBuilt Notifications">
+                    
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <input type="text" name="service" id="modalServiceInput" class="form-input" readonly style="background: rgba(0,0,0,0.03); color: var(--text-color); font-weight: 600; cursor: not-allowed; border-color: rgba(0,0,0,0.05);">
+                    <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                    <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9\-\+\s]{10,15}" title="Please enter a valid phone number" class="form-input">
+                    <textarea name="description" placeholder="Describe your requirement (optional)" rows="3" class="form-input" style="resize: vertical;"></textarea>
+                    
+                    <button type="submit" class="btn btn-primary btn-full glow-btn" id="modalSubmitBtn">Confirm Booking</button>
+                    <p id="modalFormResult" style="display: none; text-align: center; font-weight: 500; font-size: 0.95rem; margin-top: 0.5rem; transition: all 0.3s ease;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
