@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBuilt | We Build & Secure 🏗️🔒</title>
+    <meta name="description"
+        content="VBuilt connects customers with trusted skilled workers and professionals such as electricians, plumbers, carpenters, masons, painters, and CCTV technicians.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="page-loader">
+        <div class="spinner"></div>
+        <div class="loader-text">VBuilt.</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-nav" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🏗️</span>
+                VBuilt<span class="logo-dot">.</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#how-it-works" class="nav-link">How it Works</a>
+                <a href="#social" class="nav-link">Our Journey</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/919730113674" target="_blank" class="btn btn-primary btn-sm-nav">
+                    <span class="material-icons-round">chat</span> WhatsApp Us
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="material-icons-round">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">VBuilt<span class="logo-dot">.</span></a>
+            <button class="close-menu" id="close-menu" aria-label="Close Menu">
+                <span class="material-icons-round">close</span>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#how-it-works" class="mobile-link">How it Works</a>
+            <a href="#social" class="mobile-link">Our Journey</a>
+            <a href="#about" class="mobile-link">About Us</a>
+            <a href="#worker" class="mobile-link text-accent">Join as Worker</a>
+            <a href="https://wa.me/919730113674" target="_blank" class="btn btn-primary btn-full mt-4">
+                <span class="material-icons-round">chat</span> WhatsApp Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('assets/hero_background.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in-up">
+            <div class="hero-text">
+                <div class="badge badge-glass">We Build & Secure 🏗️🔒</div>
+                <h1>Trusted Construction & Home Services in One Place</h1>
+                <p>Electricians, Plumbers, Carpenters, Painters, Tile Workers & CCTV Experts — Verified Professionals
+                    Near You.</p>
+
+                <div class="hero-buttons">
+                    <a href="#quick-inquiry" class="btn btn-accent btn-large glow-btn">
+                        Book a Service
+                    </a>
+                    <a href="https://forms.gle/yourformlink" target="_blank" class="btn btn-glass btn-large">
+                        <span class="material-icons-round">person_add</span> Join as Worker
+                    </a>
+                </div>
+
+                <!-- Trust Stats Cards -->
+                <div class="hero-stats-wrapper mt-5">
+                    <div class="hero-stat-card">
+                        <div class="stat-icon"><span class="material-icons-round">verified_user</span></div>
+                        <div class="stat-info">
+                            <strong>100+</strong>
+                            <span>Verified Workers</span>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card">
+                        <div class="stat-icon"><span class="material-icons-round">sentiment_satisfied_alt</span></div>
+                        <div class="stat-info">
+                            <strong>500+</strong>
+                            <span>Happy Customers</span>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card">
+                        <div class="stat-icon"><span class="material-icons-round">support_agent</span></div>
+                        <div class="stat-info">
+                            <strong>24/7</strong>
+                            <span>Dedicated Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Premium Services</h2>
+                <p>Expert solutions for every construction and home maintenance need.</p>
+            </div>
+
+            <div class="services-grid reveal">
+                <!-- Service Cards -->
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">electrical_services</span></div>
+                    <h3>Electrician</h3>
+                    <p>Wiring, lighting, switchboards, and fault repairs.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20an%20Electrician" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">plumbing</span></div>
+                    <h3>Plumber</h3>
+                    <p>Pipe installations, leak fixes, bathroom fittings.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Plumber" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">carpenter</span></div>
+                    <h3>Carpenter</h3>
+                    <p>Custom furniture, door fittings, wood repairs.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Carpenter" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">architecture</span></div>
+                    <h3>Mason</h3>
+                    <p>Brickwork, plastering, concrete pouring, and structural repairs.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Mason" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">grid_view</span></div>
+                    <h3>Tile Worker</h3>
+                    <p>Floor and wall tiling, grouting, marble, and granite.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Tile%20Worker" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">format_paint</span></div>
+                    <h3>Painter</h3>
+                    <p>Interior/exterior painting, waterproofing, finishes.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20a%20Painter" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">videocam</span></div>
+                    <h3>CCTV Installation</h3>
+                    <p>Smart security cameras, DVR setup, and surveillance.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20CCTV%20Installation" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">engineering</span></div>
+                    <h3>Architect</h3>
+                    <p>Floor plans, 3D elevations, and complete building design.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20an%20Architect" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+                <div class="service-card group">
+                    <div class="service-icon"><span class="material-icons-round">handyman</span></div>
+                    <h3>Engineer</h3>
+                    <p>Site supervision, structural analysis, and project management.</p>
+                    <a href="https://wa.me/919730113674?text=I%20need%20an%20Engineer" target="_blank"
+                        class="service-book-btn">Book via WhatsApp &rarr;</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 reveal">
+                <a href="#quick-inquiry" class="btn btn-primary btn-large">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>How It Works</h2>
+                <p>Getting your work done is simpler than ever.</p>
+            </div>
+
+            <div class="steps-container reveal">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><span class="material-icons-round">touch_app</span></div>
+                    <h3>Select Service</h3>
+                    <p>Choose the service you need from our extensive list of professionals.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><span class="material-icons-round">event_available</span></div>
+                    <h3>Book Trusted Worker</h3>
+                    <p>Confirm your booking and a verified professional will be assigned instantly.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><span class="material-icons-round">task_alt</span></div>
+                    <h3>Get Work Done</h3>
+                    <p>Relax while our expert completes the job safely and securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Building VBuilt From Zero (Instagram / Reels Section) -->
+    <section id="social" class="section bg-dark text-white pattern-bg">
+        <div class="container reveal">
+            <div class="section-header text-center">
+                <span class="badge badge-accent mb-3">Our Journey</span>
+                <h2 class="text-white">Building VBuilt from Zero 🚀</h2>
+                <p class="text-light-muted">Follow our startup journey as we transform the construction and home
+                    services industry, one project at a time.</p>
+            </div>
+
+            <div class="reels-grid">
+                <!-- Reel 1 -->
+                <div class="reel-card">
+                    <img src="electrical_work.png" alt="Reel Thumbnail" class="reel-img">
+                    <div class="reel-overlay">
+                        <span class="material-icons-round play-btn">play_circle</span>
+                        <div class="reel-info">
+                            <span class="views"><span class="material-icons-round">visibility</span> 12.5K</span>
+                            <p>Behind the scenes: Premium Lighting Setup ⚡</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reel 2 -->
+                <div class="reel-card">
+                    <img src="professional_worker.png" alt="Reel Thumbnail" class="reel-img">
+                    <div class="reel-overlay">
+                        <span class="material-icons-round play-btn">play_circle</span>
+                        <div class="reel-info">
+                            <span class="views"><span class="material-icons-round">visibility</span> 45.2K</span>
+                            <p>Day in the life of a VBuilt Partner 👷‍♂️</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reel 3 -->
+                <div class="reel-card">
+                    <img src="cctv_installation.png" alt="Reel Thumbnail" class="reel-img">
+                    <div class="reel-overlay">
+                        <span class="material-icons-round play-btn">play_circle</span>
+                        <div class="reel-info">
+                            <span class="views"><span class="material-icons-round">visibility</span> 8.9K</span>
+                            <p>Securing homes: CCTV Installation 🔒</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reel 4 -->
+                <div class="reel-card d-none-sm">
+                    <img src="tile_work.png" alt="Reel Thumbnail" class="reel-img">
+                    <div class="reel-overlay">
+                        <span class="material-icons-round play-btn">play_circle</span>
+                        <div class="reel-info">
+                            <span class="views"><span class="material-icons-round">visibility</span> 21.1K</span>
+                            <p>Transforming spaces with perfect tiles ✨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://www.instagram.com/vbuilt_?igsh=MWl5ZzN5YXVjMWFuaA%3D%3D&utm_source=qr" target="_blank"
+                    class="btn btn-outline-white btn-large hover-glow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Follow our Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Social Proof -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="font-gradient">Trusted by 50,000+ Customers</h2>
+                <p>Real stories from homeowners and businesses who rely on VBuilt.</p>
+            </div>
+
+            <div class="testimonials-grid reveal">
+                <!-- Review 1 -->
+                <div class="testimonial-card modern-card">
+                    <div class="testimonial-header">
+                        <img src="happy_customer_one.png" alt="Customer" class="customer-img">
+                        <div class="customer-meta">
+                            <h4>Arjun M.</h4>
+                            <span class="verified-badge"><span class="material-icons-round">verified</span> Verified
+                                Booking</span>
+                        </div>
+                        <div class="stars ml-auto">
+                            <span class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span class="material-icons-round">star</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"VBuilt made my home renovation completely stress-free. The electrician and
+                        painter were extremely professional and left the place spotless. The transparency in pricing is
+                        unmatched. Highly recommended!"</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="testimonial-card modern-card">
+                    <div class="testimonial-header">
+                        <img src="happy_customer_two.png" alt="Customer" class="customer-img">
+                        <div class="customer-meta">
+                            <h4>Priya S.</h4>
+                            <span class="verified-badge"><span class="material-icons-round">verified</span> Verified
+                                Booking</span>
+                        </div>
+                        <div class="stars ml-auto">
+                            <span class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span class="material-icons-round">star</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"I needed a CCTV system installed urgently for my shop. The VBuilt technician
+                        arrived the same day and set everything up perfectly. True to their motto, they definitely
+                        secure! Great startup."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Workers Join VBuilt -->
+    <section id="worker" class="section">
+        <div class="container reveal">
+            <div class="worker-split-layout">
+                <div class="worker-split-image">
+                    <img src="professional_worker.png" alt="Professional Worker" class="rounded-xl shadow-hover">
+                    <div class="floating-stat-card">
+                        <span class="material-icons-round text-accent">trending_up</span>
+                        <div>
+                            <strong>₹50,000+</strong>
+                            <span>Monthly Earnings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-split-content">
+                    <span class="badge badge-primary">For Professionals</span>
+                    <h2>Why Workers Join VBuilt</h2>
+                    <p class="lead-text">We empower skilled tradespeople by providing a platform for consistent growth,
+                        respect, and financial stability.</p>
+
+                    <ul class="premium-list mt-4">
+                        <li>
+                            <div class="list-icon"><span class="material-icons-round">work_history</span></div>
+                            <div>
+                                <h4>Regular Work Opportunities</h4>
+                                <p>Get consistent bookings directly on your phone, eliminating idle days.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><span class="material-icons-round">account_balance_wallet</span>
+                            </div>
+                            <div>
+                                <h4>Fair & Timely Payments</h4>
+                                <p>Transparent pricing and guaranteed payments directly to your bank account.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><span class="material-icons-round">handshake</span></div>
+                            <div>
+                                <h4>Respect & Trust</h4>
+                                <p>Join a community that values your skills and treats you as a professional partner.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><span class="material-icons-round">my_location</span></div>
+                            <div>
+                                <h4>Work Near Your Area</h4>
+                                <p>Save travel time by getting matched with jobs in your preferred localities.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="https://forms.gle/yourformlink" target="_blank" class="btn btn-primary btn-large mt-4">
+                        <span class="material-icons-round">how_to_reg</span> Register as a Partner
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Inquiry Form Section -->
+    <section id="quick-inquiry" class="section bg-light">
+        <div class="container reveal">
+            <div class="inquiry-box shadow-hover">
+                <div class="inquiry-content">
+                    <h2>Ready to get started?</h2>
+                    <p>Drop your details and our team will call you back within 15 minutes.</p>
+                    <div class="contact-badges">
+                        <span class="badge"><span class="material-icons-round"
+                                style="font-size:14px;vertical-align:middle;">speed</span> Fast Response</span>
+                        <span class="badge"><span class="material-icons-round"
+                                style="font-size:14px;vertical-align:middle;">sell</span> Free Estimates</span>
+                    </div>
+                </div>
+                <div class="inquiry-form-wrapper">
+                    <form class="quick-form" id="inquiryForm">
+                        <input type="text" placeholder="Your Name" required class="form-input">
+                        <input type="tel" placeholder="Phone Number" required class="form-input">
+                        <select class="form-input" required>
+                            <option value="" disabled selected>Select Service Required</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="plumber">Plumber</option>
+                            <option value="carpenter">Carpenter</option>
+                            <option value="mason">Mason</option>
+                            <option value="tile_worker">Tile Worker</option>
+                            <option value="painter">Painter</option>
+                            <option value="cctv">CCTV Installation</option>
+                            <option value="architect">Architect</option>
+                            <option value="engineer">Engineer</option>
+                            <option value="other">Other Services</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary btn-full glow-btn">Request Callback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo text-white mb-3">
+                        <span class="logo-icon">🏗️</span> VBuilt<span class="text-accent">.</span>
+                    </a>
+                    <p class="footer-desc">The modern marketplace for premium construction, maintenance, and security
+                        services. We Build & Secure 🏗️🔒</p>
+                    <div class="social-links mt-4">
+                        <a href="https://www.instagram.com/vbuilt_?igsh=MWl5ZzN5YXVjMWFuaA%3D%3D&utm_source=qr"
+                            target="_blank" aria-label="Instagram" class="hover-up"><span
+                                class="material-icons-round">photo_camera</span></a>
+                        <a href="#" aria-label="LinkedIn" class="hover-up"><span
+                                class="material-icons-round">work</span></a>
+                        <a href="#" aria-label="Twitter" class="hover-up"><span
+                                class="material-icons-round">chat</span></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#social">Our Journey</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#worker">Careers / Partners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="https://wa.me/919730113674?text=I%20need%20an%20Electrician"
+                                target="_blank">Electrician</a></li>
+                        <li><a href="https://wa.me/919730113674?text=I%20need%20a%20Plumber"
+                                target="_blank">Plumbing</a></li>
+                        <li><a href="https://wa.me/919730113674?text=I%20need%20CCTV%20Setup" target="_blank">CCTV
+                                Setup</a></li>
+                        <li><a href="https://wa.me/919730113674?text=I%20need%20a%20Painter" target="_blank">Home
+                                Painting</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <ul class="contact-info">
+                        <li><span class="material-icons-round text-accent">location_on</span> Khamgaon
+                        </li>
+                        <li><span class="material-icons-round text-accent">phone</span> +91 9730113674</li>
+                        <li><span class="material-icons-round text-accent">email</span> <a
+                                href="mailto:vbuiltofficial@gmail.com">vbuiltofficial@gmail.com</a></li>
+                    </ul>
+                    <a href="https://wa.me/919730113674" target="_blank" class="btn btn-whatsapp mt-4 btn-full">
+                        <span class="material-icons-round">chat</span> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VBuilt. All Rights Reserved. Designed for the Future.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button with Pulse -->
+    <a href="https://wa.me/919730113674" target="_blank" class="floating-whatsapp pulse-anim"
+        aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="white">
+            <path
+                d="M16 2a13 13 0 0 0-10.9 19.9L3.5 29.5l7.8-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-1-2.2-1s-.6-.2-.8.2-.8 1-.9 1.2-.3.3-.6.1-1.4-.5-2.6-1.6c-.9-.8-1.5-1.9-1.7-2.2s-.1-.5.1-.6c.2-.2.3-.3.5-.5s.2-.3.3-.5.1-.4 0-.6-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.6c0 1.5 1.1 2.9 1.3 3.1s2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.4-.2-.7-.4z" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
