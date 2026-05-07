@@ -88,32 +88,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle Quick Inquiry Form Submission (Mock)
+    // Handle Quick Inquiry Form Submission (Web3Forms)
     const inquiryForm = document.getElementById('inquiryForm');
+    const formResult = document.getElementById('formResult');
+    
     if (inquiryForm) {
-        inquiryForm.addEventListener('submit', (e) => {
+        inquiryForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = inquiryForm.querySelector('button');
             const originalText = btn.textContent;
             
+            // Loading State
             btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;animation:spin 1s linear infinite;">autorenew</span> Sending...';
             btn.style.opacity = '0.8';
+            formResult.style.display = "none";
             
-            // Mock API call
-            setTimeout(() => {
-                btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;">check_circle</span> Request Sent!';
-                btn.classList.add('bg-success');
-                btn.style.backgroundColor = '#10b981';
-                btn.style.color = 'white';
-                
+            const formData = new FormData(inquiryForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResponse = await response.json();
+                if (response.status == 200) {
+                    // Success UI
+                    btn.innerHTML = '<span class="material-icons-round" style="font-size:18px;vertical-align:middle;">check_circle</span> Request Sent!';
+                    btn.classList.add('bg-success');
+                    btn.style.backgroundColor = '#10b981';
+                    btn.style.color = 'white';
+                    
+                    formResult.style.display = "block";
+                    formResult.innerHTML = "Success! We'll call you shortly.";
+                    formResult.style.color = "#10b981";
+                    inquiryForm.reset();
+                } else {
+                    // Error UI from API
+                    console.log(response);
+                    formResult.style.display = "block";
+                    formResult.innerHTML = jsonResponse.message || "Something went wrong. Please try again.";
+                    formResult.style.color = "#ef4444";
+                    btn.innerHTML = originalText;
+                }
+            })
+            .catch(error => {
+                // Network Error UI
+                console.log(error);
+                formResult.style.display = "block";
+                formResult.innerHTML = "Something went wrong! Please check your connection.";
+                formResult.style.color = "#ef4444";
+                btn.innerHTML = originalText;
+            })
+            .then(function() {
+                // Reset State after delay
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.backgroundColor = '';
                     btn.classList.remove('bg-success');
                     btn.style.opacity = '1';
-                    inquiryForm.reset();
-                }, 3000);
-            }, 1500);
+                    formResult.style.display = "none";
+                }, 4000);
+            });
         });
     }
 });
