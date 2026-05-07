@@ -43,6 +43,7 @@
                 <a href="#how-it-works" class="nav-link">How it Works</a>
                 <a href="#social" class="nav-link">Our Journey</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
             </div>
 
             <div class="nav-actions">
@@ -69,6 +70,7 @@
             <a href="#how-it-works" class="mobile-link">How it Works</a>
             <a href="#social" class="mobile-link">Our Journey</a>
             <a href="#about" class="mobile-link">About Us</a>
+            <a href="#testimonials" class="mobile-link">Reviews</a>
             <a href="#" class="mobile-link text-accent open-worker-modal">Join as Worker</a>
             <a href="https://wa.me/919730113674" target="_blank" class="btn btn-primary btn-full mt-4">
                 <span class="material-icons-round">chat</span> WhatsApp Us
@@ -77,10 +79,22 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg" style="background-image: url('assets/hero_background.png');"></div>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content fade-in-up">
+    <section class="hero parallax-section">
+        <div class="hero-bg parallax-bg" style="background-image: url('assets/vbuilt_hero_cinematic.png');"></div>
+        <div class="hero-overlay cinematic-blend"></div>
+        <div class="moving-gradient-light"></div>
+
+        <!-- Subtle Floating Particles -->
+        <div class="particles-wrapper">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="container hero-content fade-in-up" style="position: relative; z-index: 10;">
             <div class="hero-text">
                 <div class="badge badge-glass">We Build & Secure 🏗️🔒</div>
                 <h1>Trusted Construction & Home Services in One Place</h1>
@@ -242,48 +256,119 @@
                     services industry, one project at a time.</p>
             </div>
 
-            <div class="reels-grid">
-                <!-- Reel 1 -->
-                <div class="reel-card">
-                    <img src="electrical_work.png" alt="Reel Thumbnail" class="reel-img">
-                    <div class="reel-overlay">
-                        <span class="material-icons-round play-btn">play_circle</span>
-                        <div class="reel-info">
-                            <span class="views"><span class="material-icons-round">visibility</span> 12.5K</span>
-                            <p>Behind the scenes: Premium Lighting Setup ⚡</p>
+            <div class="reels-marquee-container mt-5">
+                <div class="reels-marquee-track">
+                    <!-- Original Set -->
+                    <div class="reel-card">
+                        <div class="reel-badge">Day 1</div>
+                        <img src="electrical_work.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.5K</span>
+                                <p>Behind the scenes: Premium Lighting Setup ⚡</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Reel 2 -->
-                <div class="reel-card">
-                    <img src="professional_worker.png" alt="Reel Thumbnail" class="reel-img">
-                    <div class="reel-overlay">
-                        <span class="material-icons-round play-btn">play_circle</span>
-                        <div class="reel-info">
-                            <span class="views"><span class="material-icons-round">visibility</span> 45.2K</span>
-                            <p>Day in the life of a VBuilt Partner 👷‍♂️</p>
+                    <div class="reel-card">
+                        <div class="reel-badge">Worker Stories</div>
+                        <img src="professional_worker.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.2K</span>
+                                <p>Day in the life of a VBuilt Partner 👷‍♂️</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Reel 3 -->
-                <div class="reel-card">
-                    <img src="cctv_installation.png" alt="Reel Thumbnail" class="reel-img">
-                    <div class="reel-overlay">
-                        <span class="material-icons-round play-btn">play_circle</span>
-                        <div class="reel-info">
-                            <span class="views"><span class="material-icons-round">visibility</span> 8.9K</span>
-                            <p>Securing homes: CCTV Installation 🔒</p>
+                    <div class="reel-card">
+                        <div class="reel-badge">Behind the Scenes</div>
+                        <img src="cctv_installation.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.1K</span>
+                                <p>Securing homes: CCTV Installation 🔒</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Reel 4 -->
-                <div class="reel-card d-none-sm">
-                    <img src="tile_work.png" alt="Reel Thumbnail" class="reel-img">
-                    <div class="reel-overlay">
-                        <span class="material-icons-round play-btn">play_circle</span>
-                        <div class="reel-info">
-                            <span class="views"><span class="material-icons-round">visibility</span> 21.1K</span>
-                            <p>Transforming spaces with perfect tiles ✨</p>
+                    <div class="reel-card">
+                        <div class="reel-badge">Transformations</div>
+                        <img src="tile_work.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.14K</span>
+                                <p>Transforming spaces with perfect tiles ✨</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card">
+                        <div class="reel-badge">Our Journey</div>
+                        <img src="painting_work.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.13K</span>
+                                <p>Adding color to our first 100 homes 🎨</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicated Set for infinite loop -->
+                    <div class="reel-card">
+                        <div class="reel-badge">Day 1</div>
+                        <img src="electrical_work.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.5K</span>
+                                <p>Behind the scenes: Premium Lighting Setup ⚡</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card">
+                        <div class="reel-badge">Worker Stories</div>
+                        <img src="professional_worker.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.2K</span>
+                                <p>Day in the life of a VBuilt Partner 👷‍♂️</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card">
+                        <div class="reel-badge">Behind the Scenes</div>
+                        <img src="cctv_installation.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.1K</span>
+                                <p>Securing homes: CCTV Installation 🔒</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card">
+                        <div class="reel-badge">Transformations</div>
+                        <img src="tile_work.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.14K</span>
+                                <p>Transforming spaces with perfect tiles ✨</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card">
+                        <div class="reel-badge">Our Journey</div>
+                        <img src="painting_work.png" alt="Reel Thumbnail" class="reel-img">
+                        <div class="reel-overlay">
+                            <span class="material-icons-round play-btn">play_circle</span>
+                            <div class="reel-info">
+                                <span class="views"><span class="material-icons-round">visibility</span> 1.13K</span>
+                                <p>Adding color to our first 100 homes 🎨</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -305,7 +390,7 @@
     </section>
 
     <!-- Testimonials / Social Proof -->
-    <section class="section bg-light">
+    <section id="testimonials" class="section bg-light">
         <div class="container">
             <div class="section-header text-center reveal">
                 <h2 class="font-gradient">Trusted by 50,0+ Customers</h2>
@@ -314,7 +399,7 @@
 
             <div class="testimonials-grid reveal">
                 <!-- Review 1 -->
-                <div class="testimonial-card modern-card">
+                <div class="testimonial-card modern-card hover-glow" style="border-top: 4px solid var(--clr-primary);">
                     <div class="testimonial-header">
                         <img src="happy_customer_one.png" alt="Customer" class="customer-img">
                         <div class="customer-meta">
@@ -330,12 +415,14 @@
                         </div>
                     </div>
                     <p class="review-text">"VBuilt made my home renovation completely stress-free. The electrician and
-                        painter were extremely professional and left the place spotless. The transparency in pricing is
-                        unmatched. Highly recommended!"</p>
+                        painter were extremely professional and left the place spotless. <strong>The transparency in
+                            pricing is unmatched.</strong> Highly recommended!"</p>
+                    <span class="text-accent mt-3" style="font-size: 0.85rem; font-weight: 600;">Service: Complete Home
+                        Renovation</span>
                 </div>
 
                 <!-- Review 2 -->
-                <div class="testimonial-card modern-card">
+                <div class="testimonial-card modern-card hover-glow" style="border-top: 4px solid var(--clr-accent);">
                     <div class="testimonial-header">
                         <img src="happy_customer_two.png" alt="Customer" class="customer-img">
                         <div class="customer-meta">
@@ -347,12 +434,41 @@
                             <span class="material-icons-round">star</span><span
                                 class="material-icons-round">star</span><span
                                 class="material-icons-round">star</span><span
-                                class="material-icons-round">star</span><span class="material-icons-round">star</span>
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star_half</span>
                         </div>
                     </div>
                     <p class="review-text">"I needed a CCTV system installed urgently for my shop. The VBuilt technician
-                        arrived the same day and set everything up perfectly. True to their motto, they definitely
-                        secure! Great startup."</p>
+                        arrived the same day and set everything up perfectly. <strong>True to their motto, they
+                            definitely secure!</strong> Great startup."</p>
+                    <span class="text-primary mt-3" style="font-size: 0.85rem; font-weight: 600;">Service: CCTV
+                        Installation</span>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="testimonial-card modern-card hover-glow" style="border-top: 4px solid #10b981;">
+                    <div class="testimonial-header">
+                        <div class="customer-img"
+                            style="background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: bold; font-size: 1.5rem;">
+                            A</div>
+                        <div class="customer-meta">
+                            <h4>Anjali Verma</h4>
+                            <span class="verified-badge" style="color: #10b981;"><span
+                                    class="material-icons-round">verified</span> Verified Booking</span>
+                        </div>
+                        <div class="stars ml-auto">
+                            <span class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span
+                                class="material-icons-round">star</span><span class="material-icons-round">star</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"Finding a reliable plumber was always a nightmare until I used VBuilt. The
+                        worker was polite, fast, and didn't overcharge. <strong>Finally, a trustworthy home services
+                            platform!</strong>"</p>
+                    <span
+                        style="color: #10b981; font-size: 0.85rem; font-weight: 600; margin-top: 1rem; display: block;">Service:
+                        Plumbing Repair</span>
                 </div>
             </div>
         </div>
@@ -363,25 +479,35 @@
             <div class="section-header text-center reveal">
                 <span class="badge badge-primary mb-3">Our Story</span>
                 <h2>Why VBuilt Exists</h2>
-                <p class="lead-text" style="max-width: 800px; margin: 0 auto;">We noticed a massive gap in India's home services market: finding reliable, verified, and transparent skilled professionals was exhausting.</p>
+                <p class="lead-text" style="max-width: 800px; margin: 0 auto;">We noticed a massive gap in India's home
+                    services market: finding reliable, verified, and transparent skilled professionals was exhausting.
+                </p>
             </div>
 
             <div class="about-grid mt-5 reveal">
                 <div class="about-content">
                     <h3 class="mb-3">Building Trust from Zero 🚀</h3>
-                    <p>VBuilt was born from a simple idea: <strong>"We Build & Secure"</strong>. We realized that whether it's fixing a leaking pipe, wiring a new home, or installing complex CCTV systems, customers needed someone they could trust with their homes and businesses.</p>
-                    <p>We are a tech-driven marketplace on a mission to organize the unorganized sector of construction and maintenance. By bringing together the finest tradespeople—electricians, plumbers, masons, and architects—we provide a seamless, transparent, and high-quality service experience.</p>
-                    
+                    <p>VBuilt was born from a simple idea: <strong>"We Build & Secure"</strong>. We realized that
+                        whether it's fixing a leaking pipe, wiring a new home, or installing complex CCTV systems,
+                        customers needed someone they could trust with their homes and businesses.</p>
+                    <p>We are a tech-driven marketplace on a mission to organize the unorganized sector of construction
+                        and maintenance. By bringing together the finest tradespeople—electricians, plumbers, masons,
+                        and architects—we provide a seamless, transparent, and high-quality service experience.</p>
+
                     <div class="mission-vision mt-4">
                         <div class="mv-card">
-                            <span class="material-icons-round text-accent mb-2" style="font-size: 2rem;">visibility</span>
+                            <span class="material-icons-round text-accent mb-2"
+                                style="font-size: 2rem;">visibility</span>
                             <h4>Our Vision</h4>
-                            <p>To be the most trusted and reliable partner for every construction and home maintenance need in India.</p>
+                            <p>To be the most trusted and reliable partner for every construction and home maintenance
+                                need in India.</p>
                         </div>
                         <div class="mv-card">
-                            <span class="material-icons-round text-primary mb-2" style="font-size: 2rem;">rocket_launch</span>
+                            <span class="material-icons-round text-primary mb-2"
+                                style="font-size: 2rem;">rocket_launch</span>
                             <h4>Our Mission</h4>
-                            <p>Empowering skilled workers with fair opportunities while delivering exceptional, frictionless service to customers.</p>
+                            <p>Empowering skilled workers with fair opportunities while delivering exceptional,
+                                frictionless service to customers.</p>
                         </div>
                     </div>
                 </div>
@@ -411,7 +537,8 @@
                 </div>
             </div>
 
-            <div class="text-center mt-5 reveal" style="padding-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <div class="text-center mt-5 reveal"
+                style="padding-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="#quick-inquiry" class="btn btn-primary btn-large glow-btn">Book a Service</a>
                 <a href="#" class="btn btn-outline-primary btn-large open-worker-modal">Join as Worker</a>
             </div>
